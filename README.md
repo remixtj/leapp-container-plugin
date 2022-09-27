@@ -3,6 +3,9 @@
 
 [The App](https://github.com/noovolari/leapp) is designed to **manage and secure Cloud Access in multi-account environments,** and it is available for MacOS, Windows, and Linux.
 
+This plugin has been developed to allow concurrent aws console sessions to be opened in the same firefox instance, without requiring user to logout every time a new console from 
+a different account is launched.
+
 # Requirements
 This plugin requires [Open external links in a container](https://addons.mozilla.org/en-US/firefox/addon/open-url-in-container/) extension for Firefox.
 This extension adds 'ext+container:' protocol support in Firefox, allowing to choose which container to use when opening an external url.
