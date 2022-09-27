@@ -2,9 +2,9 @@ import { Session } from "@noovolari/leapp-core/models/session";
 import { AwsCredentialsPlugin } from "@noovolari/leapp-core/plugin-sdk/aws-credentials-plugin";
 import { PluginLogLevel } from "@noovolari/leapp-core/plugin-sdk/plugin-log-level";
 
-export class AwsWebConsole12 extends AwsCredentialsPlugin {
+export class AwsContainer extends AwsCredentialsPlugin {
   get actionName(): string {
-    return "AWS sessions that last 12h";
+    return "Open in Firefox container";
   }
 
   /*
@@ -12,7 +12,24 @@ export class AwsWebConsole12 extends AwsCredentialsPlugin {
    * https://fontawesome.com/v5/search
    */
   get actionIcon(): string {
-    return "fas fa-clock";
+    return "fas fa-truck-container";
+  }
+
+  /*
+   * Generate container color starting from
+   * string value
+   */ 
+  generateColor(name: string): string {
+    const colorMap = ['blue','turquoise','green','yellow','orange','red','pink','purple'];
+    var color = 0;
+    var i, c;
+    if (name.length === 0) return colorMap[color];
+    for (i = 0; i < name.length; i++) {
+      c = name.charCodeAt(i);
+      color = (( color << 5 ) - color) + c;
+      color |= 0;
+    }
+    return colorMap[color];
   }
 
   /*
@@ -57,8 +74,9 @@ export class AwsWebConsole12 extends AwsCredentialsPlugin {
 
     const res = await this.pluginEnvironment.fetch(`${federationUrl}${queryParametersSigninToken}`);
     const response = await res.json();
-
-    const loginURL = `${federationUrl}?Action=login&Issuer=Leapp&Destination=${consoleHomeURL}&SigninToken=${(response as any).SigninToken}`;
+    const loginURLencoded = encodeURIComponent(`${federationUrl}?Action=login&Issuer=Leapp&Destination=${consoleHomeURL}&SigninToken=${(response as any).SigninToken}`);
+    const containerColor = this.generateColor(session.sessionName);
+    const loginURL = `ext+container:name=${session.sessionName}&color=${containerColor}&url=${loginURLencoded}`
     this.pluginEnvironment.openExternalUrl(loginURL);
   }
 }

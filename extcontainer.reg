@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\ext+container]
+"URL Protocol"=""
+[HKEY_CLASSES_ROOT\ext+container\shell]
+[HKEY_CLASSES_ROOT\ext+container\shell\open]
+[HKEY_CLASSES_ROOT\ext+container\shell\open\command]
+@="\"C:\\Program Files\\Mozilla Firefox\\firefox.exe\" \"%1\""

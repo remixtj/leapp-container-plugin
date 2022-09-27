@@ -1,21 +1,24 @@
 {
-  "name": "aws-web-console-12h",
-  "author": "Nathaniel Felsen",
+  "name": "aws-container",
+  "author": "Luca 'remix_tj' Lorenzetto",
   "version": "0.0.1",
-  "description": "Create an AWS web console with a session expiration set to 12H",
+  "description": "Open different AWS Sessions in different firefox containers",
   "keywords": [
     "leapp-plugin",
-    "AWS"
+    "AWS",
+    "firefox"
   ],
   "leappPlugin": {
     "supportedOS": [
-      "mac", "windows", "linux"
+      "mac",
+      "windows",
+      "linux"
     ],
     "supportedSessions": [
       "awsIamRoleFederated",
       "awsIamRoleChained",
       "awsSsoRole",
-      "aws"    
+      "aws"
     ]
   },
   "scripts": {
