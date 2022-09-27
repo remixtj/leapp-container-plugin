@@ -29,7 +29,7 @@ export class AwsContainer extends AwsCredentialsPlugin {
       color = (( color << 5 ) - color) + c;
       color |= 0;
     }
-    return colorMap[color];
+    return colorMap[color % 8];
   }
 
   /*
