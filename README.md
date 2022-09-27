@@ -1,3 +1,4 @@
+# Open different AWS Sessions in different firefox containers - Leapp Plugin
 [**Leapp**](https://github.com/noovolari/leapp) is a Cross-Platform Cloud access App, built on top of [Electron](https://github.com/electron/electron).
 
 [The App](https://github.com/noovolari/leapp) is designed to **manage and secure Cloud Access in multi-account environments,** and it is available for MacOS, Windows, and Linux.
