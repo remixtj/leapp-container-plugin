@@ -1,7 +1,7 @@
 {
   "name": "leapp-aws-container",
   "author": "Luca 'remix_tj' Lorenzetto",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Open different AWS Sessions in different firefox containers",
   "keywords": [
     "leapp-plugin",
@@ -38,5 +38,9 @@
     "typescript": "^4.7.4",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
+  },
+  "repository": {
+   "type": "git",
+   "url": "https://github.com/remixtj/leapp-container-plugin.git"
   }
 }
