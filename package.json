@@ -1,5 +1,5 @@
 {
-  "name": "aws-container",
+  "name": "leapp-aws-container",
   "author": "Luca 'remix_tj' Lorenzetto",
   "version": "0.0.1",
   "description": "Open different AWS Sessions in different firefox containers",
